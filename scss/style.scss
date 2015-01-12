@@ -1,0 +1,145 @@
+@import "../bower_components/normalize-scss/_normalize.scss";
+@import "../bower_components/typeplate-starter-kit/css/_typeplate.scss";
+@mixin gridify($col, $width, $gutter: 2) {
+    @media only screen and (min-width: #{$width}#{"px"}){
+        .grid-#{$col}-#{$width} {
+            & > * {
+                width: #{(100 / $col) - $gutter}#{"%"};
+            }
+        }
+    }
+}
+/**
+ * BOX-SIZING
+ */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+/**
+ * GRIDS
+ */
+
+.grid {
+    width: 100%;
+    display: block;
+    font-size: 0;
+    text-align: justify;
+    position: relative;
+    & > * {
+        font-size: medium;
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+    }
+    &:after {
+        display: inline-block;
+        width: 100%;
+        content: "";
+        font-size: medium;
+
+    }
+}
+@include gridify(2, 400); // creates .grid-2-400
+@include gridify(4, 600);
+@include gridify(3, 600);
+/**
+ * GENERAL
+ */
+
+body {
+    transition: opacity .25s ease;
+}
+
+img {
+    width: 100%;
+}
+.grid-5 > * {
+    width: 20%;
+
+    background-color: white;
+
+}
+button {
+border: black solid 1.3px;
+    background-color: white;
+}
+.icon {
+    width: 32px;
+    height: 32px;
+    fill: #0099CC;
+}
+.fa-lg {
+color: black;
+line-height: 1.75em;
+text-align: center;
+
+}
+.column {
+border: black solid 3.5px;
+}
+.title {
+    position: relative;
+
+}
+.description {
+    position: absolute;
+
+color: #514848;
+font-size: 20px;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+   margin-top: 5px;
+
+}
+.price {
+
+    position: absolute;
+    right: 0;
+    font-size: 25px;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+   color: black;
+}
+.flipbox {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 80px;
+    margin: 0 auto;
+}
+.picturebox {
+    position: relative;
+
+}
+.fa-repeat {
+    color: black;
+line-height: 1.3em;
+text-align: center;
+}
+.custom {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+transform: translateX(-50%);
+    z-index: 1;
+background-color: black;
+    opacity: 0;
+    width: 18%;
+
+}
+
+.size {
+    height:100%;
+    width: 100%;
+    color: white;
+}
+.sizes:hover {
+
+    opacity: 0;
+}
+.fa-sort:hover {
+    background-color: gray;
+}
+
